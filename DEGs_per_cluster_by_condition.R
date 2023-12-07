@@ -1,4 +1,4 @@
-# Small function to iteravely run FindMarkers in seurat by a chosen condition
+# Small function to iteratively run FindMarkers in seurat by a chosen condition
 # for all clusters and adds it to one csv file
 
 # The inputs are the seurat object name, the condition we're running the DE test
