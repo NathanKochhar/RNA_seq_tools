@@ -1,5 +1,5 @@
 # Small function to iteratively run FindMarkers in seurat by a chosen condition
-# for all clusters and adds it to one csv file
+# for all clusters and adds it to one data frame
 
 # The inputs are the seurat object name, the condition we're running the DE test
 # over, the 2 conditions (only pairwise), whether you want only positive or both 
