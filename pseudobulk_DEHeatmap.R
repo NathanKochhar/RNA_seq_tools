@@ -2,14 +2,8 @@ library(Seurat)
 library(pheatmap)
 library(circlize)
 
-obj <- readRDS("/Users/nathankochhar/data/projects/1209_Phillips_Collisson/R_Analysis/main_obj.rds")
-
-
 # arguments: seurat obj, group.by, ident.1, ident.2, only.pos, logfc.threshold, min.pct, recorrect_umi,
-# p_val_adj.threshold, cell_type, return_matrix, cluster_rows = T, cluster_cols = T, fontsize_row = 0
-
-
-
+# p_val_adj.threshold, cell_type, all.genes, num.gene
 
 pseudobulk_DEHeatmap <- function(obj, group.by, ident.1, ident.2, cell.type, only.pos = FALSE, logfc.threshold = 1, 
                                 min.pct = 0.05, recorrect_umi = FALSE, all.genes = T, num.gene = 0){
@@ -53,18 +47,4 @@ pseudobulk_DEHeatmap <- function(obj, group.by, ident.1, ident.2, cell.type, onl
 test <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
                             cell.type = "cell_type")
 
-color_mapping <- colorRamp2(c(min(test)+2, 0, max(test)-2), c("red", "white", "blue"))
-
 pheatmap(test)
-
-test2 <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
-                            cell.type = "cell_type", all.genes = F, num.gene = 20)
-
-pheatmap(test2)
-
-test3 <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
-                             cell.type = "cell_type", only.pos = T, logfc.threshold = 0.1, 
-                             min.pct = 0.1, all.genes = F, num.gene = 20)
-
-pheatmap(test3)
-
