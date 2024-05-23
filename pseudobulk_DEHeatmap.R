@@ -1,7 +1,3 @@
-library(Seurat)
-library(pheatmap)
-library(circlize)
-
 # arguments: seurat obj, group.by, ident.1, ident.2, only.pos, logfc.threshold, min.pct, recorrect_umi,
 # p_val_adj.threshold, cell_type, all.genes, num.gene
 
@@ -43,8 +39,3 @@ pseudobulk_DEHeatmap <- function(obj, group.by, ident.1, ident.2, cell.type, onl
   
   return (mat)
 }
-
-test <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
-                            cell.type = "cell_type")
-
-pheatmap(test)
