@@ -91,13 +91,3 @@ PathwayAnalysis_per_cluster <- function(DEG_df, log2FC = 1, dbs) {
   }
   
 }
-
-#run DEGs_per_cluster
-try <- DEGs_per_cluster(obj, "condition", "experimental", "control")
-
-#set up dbs to use
-dbs_use <- c("GO_Biological_Process_2021", "KEGG_2019_Mouse","MSigDB_Hallmark_2020", "WikiPathways_2019_Mouse") 
-
-#run function, makes folders and figures
-PathwayAnalysis_per_cluster(try, dbs_use)
-
