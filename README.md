@@ -9,6 +9,7 @@ Small function to iteratively run FindMarkers in seurat by a chosen condition fo
 # an example run where obj is my seurat object, "condition" is a meta.data
 # variable in the object and "experimental" and "control" are the two conditions
 library(Seurat)
+
 try <- DEGs_per_cluster(obj, "condition", "experimental", "control")
 try
 ```
@@ -19,6 +20,7 @@ Function for a seurat object to return a pseudobulk matrix by cell type/conditio
 library(Seurat)
 library(pheatmap)
 library(circlize)
+
 test <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
                             cell.type = "cell_type")
 
