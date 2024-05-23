@@ -6,9 +6,9 @@ Some small tools I made because I couldn't find them online, mostly seurat based
 ### DEGs_per_cluster_by_condition
 Small function to iteratively run FindMarkers in seurat by a chosen condition for all clusters and adds it to one data frame. Can easily be modified to find DEGs per specified meta.data column (cell type).
 ```R
+library(Seurat)
 # an example run where obj is my seurat object, "condition" is a meta.data
 # variable in the object and "experimental" and "control" are the two conditions
-library(Seurat)
 
 try <- DEGs_per_cluster(obj, "condition", "experimental", "control")
 try
@@ -17,12 +17,12 @@ try
 ### pseudobulk_DEHeatmap
 Function for a seurat object to return a pseudobulk matrix by cell type/condition for plotting with pheatmap. Celltypes will be treated as samples and log2FC is based on inputted conditions.
 ```R
-# an example run where obj is my seurat object, "condition" is a meta.data
-# variable in the object and "experimental" and "control" are the two conditions
-# and cell type is "cell_type"
 library(Seurat)
 library(pheatmap)
 library(circlize)
+# an example run where obj is my seurat object, "condition" is a meta.data
+# variable in the object and "experimental" and "control" are the two conditions
+# and cell type is "cell_type"
 
 test <- pseudobulk_DEHeatmap(obj, group.by = "condition", ident.1 = "experimental", ident.2 = "control",
                             cell.type = "cell_type")
