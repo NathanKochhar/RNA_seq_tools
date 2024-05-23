@@ -6,6 +6,8 @@ Some small tools I made because I couldn't find them online, mostly seurat based
 ### DEGs_per_cluster_by_condition
 Small function to iteratively run FindMarkers in seurat by a chosen condition for all clusters and adds it to one data frame. Can easily be modified to find DEGs per specified meta.data column (cell type).
 ```R
+# an example run where obj is my seurat object, "condition" is a meta.data
+# variable in the object and "experimental" and "control" are the two conditions
 library(Seurat)
 try <- DEGs_per_cluster(obj, "condition", "experimental", "control")
 try
