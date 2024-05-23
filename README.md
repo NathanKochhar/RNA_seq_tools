@@ -4,7 +4,7 @@ Some small tools I made because I couldn't find them online, mostly seurat based
 #
 
 ### DEGs_per_cluster_by_condition
-Small function to iteratively run FindMarkers in seurat by a chosen condition for all clusters and adds it to one data frame.
+Small function to iteratively run FindMarkers in seurat by a chosen condition for all clusters and adds it to one data frame. Can easily be modified to find DEGs per specified meta.data column (cell type)
 
 #
 ### pseudobulk_DEHeatmap
