@@ -22,9 +22,3 @@ DEGs_per_cluster <- function(object, condition, ident.1, ident.2, only.pos = T,
   }
   return(DEGs)
 } 
-
-# an example run where obj is my seurat object, "condition" is a meta.data
-# variable in the object and "experimental" and "control" are the two conditions
-try <- DEGs_per_cluster(obj, "condition", "experimental", "control")
-try
-
